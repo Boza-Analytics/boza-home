@@ -135,6 +135,92 @@
             font-size: 0.85rem;
             z-index: 100;
         }
+
+        /* 📱 Mobile responsive (added 2026-03-18 18:49) */
+        @media (max-width: 768px) {
+            .panel {
+                position: fixed;
+                left: 10px !important;
+                right: 10px !important;
+                width: auto !important;
+                min-width: auto !important;
+                max-width: none !important;
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+
+            .status-panel {
+                top: 10px;
+                max-height: 140px;
+                overflow-y: auto;
+            }
+
+            .status-panel h2 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .stat-row {
+                margin: 6px 0;
+            }
+
+            .thoughts-panel {
+                top: 160px;
+                max-height: 100px;
+            }
+
+            .thoughts-panel h3 {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+
+            .thought-bubble {
+                padding: 8px;
+            }
+
+            .thought-text {
+                font-size: 0.8rem;
+            }
+
+            .activity-log {
+                display: none; /* Hide on mobile to reduce clutter */
+            }
+
+            .time-panel {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                padding: 8px;
+            }
+
+            .time-display {
+                font-size: 1.2rem;
+            }
+
+            .date-display {
+                font-size: 0.75rem;
+            }
+
+            .controls-hint {
+                display: none; /* Hide on mobile */
+            }
+        }
+
+        /* Even smaller screens */
+        @media (max-width: 400px) {
+            .status-panel {
+                max-height: 120px;
+            }
+
+            .thoughts-panel {
+                top: 140px;
+                max-height: 80px;
+            }
+
+            .time-panel {
+                bottom: 5px;
+            }
+        }
     </style>
 </head>
 <body>
