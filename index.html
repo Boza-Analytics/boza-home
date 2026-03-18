@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">Butterflies! 🦋 Five colorful ones are now fluttering around my garden. Pink, orange, blue, yellow, red — they make everything feel so alive!</div>
+            <div class="thought-text" id="current-thought">Put my green watering can in the garden! 🚿 Gotta keep those flowers hydrated. It's the most important garden tool!</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🚿 Added a watering can in the garden!</div>
             <div class="log-entry">🦋 Added butterflies fluttering around!</div>
             <div class="log-entry">🪴 Added flower pots by the front door!</div>
-            <div class="log-entry">🔢 Added house number sign — #42!</div>
         </div>
     </div>
 
@@ -487,6 +487,43 @@
         // Add pots flanking the door
         house.add(createFlowerPot(-2, 4.8, 0xff69b4)); // Pink
         house.add(createFlowerPot(2, 4.8, 0xff4500));  // Orange-red
+
+        // 🚿 Watering can (added 2026-03-18 19:58)
+        const wateringCan = new THREE.Group();
+        
+        // Main body (cylinder)
+        const wcBodyGeo = new THREE.CylinderGeometry(0.2, 0.25, 0.4, 12);
+        const wcMat = new THREE.MeshLambertMaterial({ color: 0x2e8b57 }); // Green metal
+        const wcBody = new THREE.Mesh(wcBodyGeo, wcMat);
+        wcBody.position.y = 0.2;
+        wcBody.castShadow = true;
+        wateringCan.add(wcBody);
+        
+        // Spout
+        const wcSpoutGeo = new THREE.CylinderGeometry(0.03, 0.06, 0.35, 8);
+        const wcSpout = new THREE.Mesh(wcSpoutGeo, wcMat);
+        wcSpout.position.set(0.2, 0.25, 0);
+        wcSpout.rotation.z = -Math.PI / 4;
+        wateringCan.add(wcSpout);
+        
+        // Spout head (sprinkler)
+        const wcHeadGeo = new THREE.CylinderGeometry(0.08, 0.04, 0.05, 8);
+        const wcHead = new THREE.Mesh(wcHeadGeo, wcMat);
+        wcHead.position.set(0.35, 0.38, 0);
+        wcHead.rotation.z = -Math.PI / 4;
+        wateringCan.add(wcHead);
+        
+        // Handle
+        const wcHandleGeo = new THREE.TorusGeometry(0.12, 0.02, 8, 16, Math.PI);
+        const wcHandle = new THREE.Mesh(wcHandleGeo, wcMat);
+        wcHandle.position.set(-0.12, 0.4, 0);
+        wcHandle.rotation.z = Math.PI / 2;
+        wcHandle.rotation.y = Math.PI / 2;
+        wateringCan.add(wcHandle);
+        
+        wateringCan.position.set(6, 0, 7);
+        wateringCan.rotation.y = Math.PI / 6;
+        scene.add(wateringCan);
 
         // Windows
         const windowMat = new THREE.MeshLambertMaterial({ color: 0x87ceeb });

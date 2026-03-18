@@ -32,7 +32,7 @@
 - [x] Garden gnome ✅ (2026-03-18 19:21)
 - [ ] Picket fence details
 - [x] Flower pots ✅ (2026-03-18 19:46)
-- [ ] Watering can prop
+- [x] Watering can prop ✅ (2026-03-18 19:58)
 - [ ] Wheelbarrow
 - [ ] Compost bin
 
@@ -64,3 +64,4 @@
 - 19:40 - 🔢 Added house number sign — #42!
 - 19:46 - 🪴 Added flower pots by the front door!
 - 19:52 - 🦋 Added butterflies fluttering around the garden!
+- 19:58 - 🚿 Added a watering can in the garden!
