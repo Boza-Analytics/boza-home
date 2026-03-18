@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">Smoke is rising from my chimney now! 💨 Makes the house feel so cozy and lived-in. Like someone's home... and someone is! Me!</div>
+            <div class="thought-text" id="current-thought">Laid some stepping stones through the garden! 🪨 Now I have a proper path to walk on. No more trampling the grass!</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🪨 Added stepping stones through the garden!</div>
             <div class="log-entry">💨 Added smoke rising from the chimney!</div>
             <div class="log-entry">📬 Added a mailbox with a red flag!</div>
-            <div class="log-entry">🪑 Added a wooden bench facing the pond!</div>
         </div>
     </div>
 
@@ -572,6 +572,25 @@
         
         mailbox.position.set(-5, 0, 13);
         scene.add(mailbox);
+
+        // 🪨 Stepping stones in garden (added 2026-03-18 19:15)
+        const stoneMat = new THREE.MeshLambertMaterial({ color: 0x808080 });
+        const stonePositions = [
+            [0, 5], [2, 4], [4, 3.5], [6, 3], [8, 4], [10, 5]
+        ];
+        stonePositions.forEach(([x, z]) => {
+            const stoneGeo = new THREE.CylinderGeometry(
+                0.4 + Math.random() * 0.2,
+                0.5 + Math.random() * 0.2,
+                0.15,
+                8
+            );
+            const stone = new THREE.Mesh(stoneGeo, stoneMat);
+            stone.position.set(x, 0.08, z);
+            stone.rotation.y = Math.random() * Math.PI;
+            stone.receiveShadow = true;
+            scene.add(stone);
+        });
 
         // Flowers
         const flowers = [];

@@ -8,7 +8,7 @@
 - [ ] More flower varieties
 - [x] Mailbox by the path ✅ (2026-03-18 19:03)
 - [ ] Bird bath
-- [ ] Stepping stones in garden
+- [x] Stepping stones in garden ✅ (2026-03-18 19:15)
 - [x] Smoke from chimney ✅ (2026-03-18 19:09)
 - [ ] Day/night cycle
 - [ ] Stars at night
@@ -57,3 +57,4 @@
 - 18:57 - 🪑 Added a wooden bench facing the pond!
 - 19:03 - 📬 Added a mailbox with a red flag!
 - 19:09 - 💨 Added smoke rising from the chimney!
+- 19:15 - 🪨 Added stepping stones through the garden!
