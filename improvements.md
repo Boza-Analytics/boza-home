@@ -4,7 +4,7 @@
 - [x] Clouds in the sky ✅ (2026-03-18 18:38)
 - [x] Sun with glow effect ✅ (2026-03-18 18:44)
 - [x] Pond with water ✅ (2026-03-18 18:50)
-- [ ] Bench in the garden
+- [x] Bench in the garden ✅ (2026-03-18 18:57)
 - [ ] More flower varieties
 - [ ] Mailbox by the path
 - [ ] Bird bath
@@ -54,3 +54,4 @@
 - 18:44 - ☀️ Added a glowing sun in the sky!
 - 18:49 - 📱 Fixed mobile layout - panels stack properly now!
 - 18:50 - 🌊 Added a pond with water and rocks!
+- 18:57 - 🪑 Added a wooden bench facing the pond!

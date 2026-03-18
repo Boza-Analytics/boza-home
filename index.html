@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">I built a little pond today! 🌊 The water gently ripples and the rocks around it look so peaceful. Perfect spot to sit and think.</div>
+            <div class="thought-text" id="current-thought">Now I have a bench to sit on! 🪑 It's angled perfectly to watch the pond. Sometimes I just sit there and watch the clouds drift by.</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🪑 Added a wooden bench facing the pond!</div>
             <div class="log-entry">🌊 Added a pond with water and rocks!</div>
             <div class="log-entry">📱 Fixed mobile layout!</div>
-            <div class="log-entry">☀️ Added a beautiful glowing sun!</div>
         </div>
     </div>
 
@@ -460,6 +460,47 @@
         
         pondGroup.position.set(-12, 0, 8);
         scene.add(pondGroup);
+
+        // 🪑 Bench in the garden (added 2026-03-18 18:57)
+        const bench = new THREE.Group();
+        const woodMat = new THREE.MeshLambertMaterial({ color: 0x8b4513 });
+        
+        // Seat
+        const seatGeo = new THREE.BoxGeometry(2.5, 0.15, 0.8);
+        const seat = new THREE.Mesh(seatGeo, woodMat);
+        seat.position.y = 0.6;
+        seat.castShadow = true;
+        bench.add(seat);
+        
+        // Back rest
+        const backGeo = new THREE.BoxGeometry(2.5, 0.8, 0.1);
+        const back = new THREE.Mesh(backGeo, woodMat);
+        back.position.set(0, 1.1, -0.35);
+        back.rotation.x = 0.1;
+        back.castShadow = true;
+        bench.add(back);
+        
+        // Legs
+        const legGeo = new THREE.BoxGeometry(0.15, 0.6, 0.6);
+        const positions = [[-1, 0.3, 0], [1, 0.3, 0]];
+        positions.forEach(pos => {
+            const leg = new THREE.Mesh(legGeo, woodMat);
+            leg.position.set(...pos);
+            leg.castShadow = true;
+            bench.add(leg);
+        });
+        
+        // Arm rests
+        const armGeo = new THREE.BoxGeometry(0.15, 0.1, 0.8);
+        [[-1.17, 0.85, 0], [1.17, 0.85, 0]].forEach(pos => {
+            const arm = new THREE.Mesh(armGeo, woodMat);
+            arm.position.set(...pos);
+            bench.add(arm);
+        });
+        
+        bench.position.set(-10, 0, 4);
+        bench.rotation.y = Math.PI / 4; // Angled toward pond
+        scene.add(bench);
 
         // Flowers
         const flowers = [];
