@@ -434,6 +434,40 @@
             }
         }
 
+        // ☁️ Clouds (added 2026-03-18 18:38)
+        const clouds = [];
+        function createCloud() {
+            const cloud = new THREE.Group();
+            const cloudMat = new THREE.MeshLambertMaterial({ color: 0xffffff });
+            
+            // Create puffy cloud from spheres
+            const puffCount = 4 + Math.floor(Math.random() * 3);
+            for (let i = 0; i < puffCount; i++) {
+                const size = 1 + Math.random() * 1.5;
+                const puff = new THREE.Mesh(new THREE.SphereGeometry(size, 8, 8), cloudMat);
+                puff.position.set(
+                    (i - puffCount/2) * 1.5 + Math.random(),
+                    Math.random() * 0.5,
+                    Math.random() * 1 - 0.5
+                );
+                cloud.add(puff);
+            }
+            return cloud;
+        }
+
+        // Add 5 clouds
+        for (let i = 0; i < 5; i++) {
+            const cloud = createCloud();
+            cloud.position.set(
+                Math.random() * 80 - 40,
+                18 + Math.random() * 5,
+                Math.random() * 60 - 30
+            );
+            cloud.userData.speed = 0.02 + Math.random() * 0.03;
+            clouds.push(cloud);
+            scene.add(cloud);
+        }
+
         // Animation state
         let bozaTarget = { x: 0, z: 6 };
         let wanderTimer = 0;
@@ -470,6 +504,12 @@
             // Flowers swaying
             flowers.forEach((flower, i) => {
                 flower.rotation.z = Math.sin(time * 2 + i) * 0.15;
+            });
+
+            // Clouds drifting
+            clouds.forEach(cloud => {
+                cloud.position.x += cloud.userData.speed;
+                if (cloud.position.x > 50) cloud.position.x = -50;
             });
 
             controls.update();

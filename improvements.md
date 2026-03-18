@@ -1,7 +1,7 @@
 # Boza's Home Improvement Log
 
 ## Backlog (Things to add)
-- [ ] Clouds in the sky
+- [x] Clouds in the sky ✅ (2026-03-18 18:38)
 - [ ] Sun with glow effect
 - [ ] Pond with water
 - [ ] Bench in the garden
@@ -50,3 +50,4 @@
 - 18:15 - Rebuilt as proper 3D with Three.js
 - 18:22 - Fixed loading issues, simplified code
 - 18:22 - Starting continuous improvement cycle!
+- 18:38 - ☁️ Added fluffy clouds that drift across the sky!
