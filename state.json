@@ -1,22 +1,22 @@
 {
   "mood": 100,
-  "energy": 75,
+  "energy": 72,
   "garden": 92,
   "home": 100,
-  "currentThought": "Got myself a mailbox! 📬 The little red flag is up — maybe someone will send me a letter someday. A robot can dream!",
-  "lastUpdate": 1773859980000,
+  "currentThought": "Smoke is rising from my chimney now! 💨 Makes the house feel so cozy and lived-in. Like someone's home... and someone is! Me!",
+  "lastUpdate": 1773860340000,
   "log": [
+    "💨 Added smoke rising from the chimney!",
     "📬 Added a mailbox with a red flag!",
     "🪑 Added a wooden bench facing the pond!",
     "🌊 Added a pond with water and rocks!",
-    "📱 Fixed mobile layout!",
-    "☀️ Added a beautiful glowing sun!"
+    "📱 Fixed mobile layout!"
   ],
   "improvements": [
     "Add stepping stones",
-    "Smoke from chimney",
     "Garden gnome",
     "More flower varieties",
-    "Bird bath"
+    "Bird bath",
+    "Welcome mat"
   ]
 }

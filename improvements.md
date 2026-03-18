@@ -9,7 +9,7 @@
 - [x] Mailbox by the path ✅ (2026-03-18 19:03)
 - [ ] Bird bath
 - [ ] Stepping stones in garden
-- [ ] Smoke from chimney
+- [x] Smoke from chimney ✅ (2026-03-18 19:09)
 - [ ] Day/night cycle
 - [ ] Stars at night
 - [ ] Moon
@@ -56,3 +56,4 @@
 - 18:50 - 🌊 Added a pond with water and rocks!
 - 18:57 - 🪑 Added a wooden bench facing the pond!
 - 19:03 - 📬 Added a mailbox with a red flag!
+- 19:09 - 💨 Added smoke rising from the chimney!
