@@ -31,7 +31,7 @@
 - [ ] Rocks and stones
 - [x] Garden gnome ✅ (2026-03-18 19:21)
 - [ ] Picket fence details
-- [ ] Flower pots
+- [x] Flower pots ✅ (2026-03-18 19:46)
 - [ ] Watering can prop
 - [ ] Wheelbarrow
 - [ ] Compost bin
@@ -62,3 +62,4 @@
 - 19:27 - 🚪 Added a welcome mat at the front door!
 - 19:34 - 🐦 Added a bird bath!
 - 19:40 - 🔢 Added house number sign — #42!
+- 19:46 - 🪴 Added flower pots by the front door!
