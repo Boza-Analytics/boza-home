@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">Put two terracotta flower pots by my front door! 🪴 One pink, one orange. They make the entrance so much more welcoming!</div>
+            <div class="thought-text" id="current-thought">Butterflies! 🦋 Five colorful ones are now fluttering around my garden. Pink, orange, blue, yellow, red — they make everything feel so alive!</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🦋 Added butterflies fluttering around!</div>
             <div class="log-entry">🪴 Added flower pots by the front door!</div>
             <div class="log-entry">🔢 Added house number sign — #42!</div>
-            <div class="log-entry">🐦 Added a bird bath!</div>
         </div>
     </div>
 
@@ -770,6 +770,53 @@
         birdBath.position.set(14, 0, 0);
         scene.add(birdBath);
 
+        // 🦋 Butterflies (added 2026-03-18 19:52)
+        const butterflies = [];
+        const butterflyColors = [0xff69b4, 0xffa500, 0x87ceeb, 0xffff00, 0xff6347];
+        
+        function createButterfly(color) {
+            const butterfly = new THREE.Group();
+            
+            // Body
+            const bfBodyGeo = new THREE.CapsuleGeometry(0.03, 0.15, 4, 8);
+            const bfBodyMat = new THREE.MeshLambertMaterial({ color: 0x333333 });
+            const bfBody = new THREE.Mesh(bfBodyGeo, bfBodyMat);
+            bfBody.rotation.x = Math.PI / 2;
+            butterfly.add(bfBody);
+            
+            // Wings
+            const bfWingGeo = new THREE.CircleGeometry(0.12, 8);
+            const bfWingMat = new THREE.MeshLambertMaterial({ color: color, side: THREE.DoubleSide });
+            
+            const leftWing = new THREE.Mesh(bfWingGeo, bfWingMat);
+            leftWing.position.set(-0.08, 0, 0);
+            leftWing.rotation.y = 0.3;
+            butterfly.add(leftWing);
+            
+            const rightWing = new THREE.Mesh(bfWingGeo, bfWingMat);
+            rightWing.position.set(0.08, 0, 0);
+            rightWing.rotation.y = -0.3;
+            butterfly.add(rightWing);
+            
+            butterfly.userData = {
+                leftWing: leftWing,
+                rightWing: rightWing,
+                basePos: { x: Math.random() * 20 - 5, y: 1.5 + Math.random() * 2, z: Math.random() * 15 - 5 },
+                phase: Math.random() * Math.PI * 2,
+                speed: 0.5 + Math.random() * 0.5
+            };
+            
+            butterfly.position.set(butterfly.userData.basePos.x, butterfly.userData.basePos.y, butterfly.userData.basePos.z);
+            return butterfly;
+        }
+        
+        // Create 5 butterflies
+        for (let i = 0; i < 5; i++) {
+            const bf = createButterfly(butterflyColors[i]);
+            butterflies.push(bf);
+            scene.add(bf);
+        }
+
         // Flowers
         const flowers = [];
         const flowerColors = [0xff69b4, 0xff6347, 0xffd700, 0x9370db, 0x00ff7f, 0xff4500];
@@ -987,6 +1034,20 @@
                     smoke.material.opacity = 0.6;
                     smoke.scale.set(1, 1, 1);
                 }
+            });
+
+            // Butterflies fluttering
+            butterflies.forEach((bf, i) => {
+                const t = time * bf.userData.speed + bf.userData.phase;
+                bf.position.x = bf.userData.basePos.x + Math.sin(t) * 3;
+                bf.position.y = bf.userData.basePos.y + Math.sin(t * 1.5) * 0.5;
+                bf.position.z = bf.userData.basePos.z + Math.cos(t * 0.7) * 2;
+                bf.rotation.y = Math.sin(t) * 0.5;
+                
+                // Wing flapping
+                const flapAngle = Math.sin(time * 15 + i) * 0.8;
+                bf.userData.leftWing.rotation.y = 0.3 + flapAngle;
+                bf.userData.rightWing.rotation.y = -0.3 - flapAngle;
             });
 
             controls.update();

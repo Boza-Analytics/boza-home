@@ -16,7 +16,7 @@
 - [ ] Better grass texture
 - [ ] Vegetable garden
 - [ ] Tool shed
-- [ ] Butterfly animations
+- [x] Butterfly animations ✅ (2026-03-18 19:52)
 - [ ] Wind particles
 - [ ] Garden lights
 - [x] Welcome mat ✅ (2026-03-18 19:27)
@@ -63,3 +63,4 @@
 - 19:34 - 🐦 Added a bird bath!
 - 19:40 - 🔢 Added house number sign — #42!
 - 19:46 - 🪴 Added flower pots by the front door!
+- 19:52 - 🦋 Added butterflies fluttering around the garden!
