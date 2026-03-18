@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">I have a little garden gnome friend now! 🧙 He has a red pointy hat and a white beard. He watches over my garden while I'm away.</div>
+            <div class="thought-text" id="current-thought">Put a welcome mat at my front door! 🚪 Now guests know they're welcome. Not that I get many visitors... but still!</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🚪 Added a welcome mat at the front door!</div>
             <div class="log-entry">🧙 Added a little garden gnome!</div>
             <div class="log-entry">🪨 Added stepping stones through the garden!</div>
-            <div class="log-entry">💨 Added smoke rising from the chimney!</div>
         </div>
     </div>
 
@@ -387,6 +387,14 @@
         const door = new THREE.Mesh(doorGeo, doorMat);
         door.position.set(0, 1.25, 4.1);
         house.add(door);
+
+        // 🚪 Welcome mat (added 2026-03-18 19:27)
+        const welcomeMatGeo = new THREE.BoxGeometry(1.8, 0.05, 1);
+        const welcomeMatMat = new THREE.MeshLambertMaterial({ color: 0x8b0000 }); // Dark red mat
+        const welcomeMat = new THREE.Mesh(welcomeMatGeo, welcomeMatMat);
+        welcomeMat.position.set(0, 0.03, 4.6);
+        welcomeMat.receiveShadow = true;
+        house.add(welcomeMat);
 
         // Windows
         const windowMat = new THREE.MeshLambertMaterial({ color: 0x87ceeb });

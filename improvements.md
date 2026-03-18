@@ -19,7 +19,7 @@
 - [ ] Butterfly animations
 - [ ] Wind particles
 - [ ] Garden lights
-- [ ] Welcome mat
+- [x] Welcome mat ✅ (2026-03-18 19:27)
 - [ ] House number sign
 - [ ] Weather effects (rain)
 - [ ] Seasons changing
@@ -59,3 +59,4 @@
 - 19:09 - 💨 Added smoke rising from the chimney!
 - 19:15 - 🪨 Added stepping stones through the garden!
 - 19:21 - 🧙 Added a little garden gnome!
+- 19:27 - 🚪 Added a welcome mat at the front door!
