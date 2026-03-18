@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">The sun is shining bright in my sky now! ☀️ It feels so warm and cozy. My little world is really coming together!</div>
+            <div class="thought-text" id="current-thought">I built a little pond today! 🌊 The water gently ripples and the rocks around it look so peaceful. Perfect spot to sit and think.</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🌊 Added a pond with water and rocks!</div>
+            <div class="log-entry">📱 Fixed mobile layout!</div>
             <div class="log-entry">☀️ Added a beautiful glowing sun!</div>
-            <div class="log-entry">☁️ Added fluffy clouds drifting across the sky!</div>
-            <div class="log-entry">🏠 Moved into the new 3D house!</div>
         </div>
     </div>
 
@@ -418,6 +418,48 @@
         path.rotation.x = -Math.PI / 2;
         path.position.set(-5, 0.01, 9);
         scene.add(path);
+
+        // 🌊 Pond with water (added 2026-03-18 18:50)
+        const pondGroup = new THREE.Group();
+        
+        // Pond base (dirt edge)
+        const pondEdgeGeo = new THREE.CircleGeometry(3.5, 32);
+        const pondEdgeMat = new THREE.MeshLambertMaterial({ color: 0x5d4037 });
+        const pondEdge = new THREE.Mesh(pondEdgeGeo, pondEdgeMat);
+        pondEdge.rotation.x = -Math.PI / 2;
+        pondEdge.position.y = 0.01;
+        pondGroup.add(pondEdge);
+        
+        // Water surface
+        const waterGeo = new THREE.CircleGeometry(3, 32);
+        const waterMat = new THREE.MeshLambertMaterial({ 
+            color: 0x4a90d9,
+            transparent: true,
+            opacity: 0.8
+        });
+        const water = new THREE.Mesh(waterGeo, waterMat);
+        water.rotation.x = -Math.PI / 2;
+        water.position.y = 0.05;
+        water.userData.baseY = 0.05;
+        pondGroup.add(water);
+        
+        // Some rocks around pond
+        const rockMat = new THREE.MeshLambertMaterial({ color: 0x808080 });
+        for (let i = 0; i < 6; i++) {
+            const angle = (i / 6) * Math.PI * 2;
+            const rockGeo = new THREE.SphereGeometry(0.3 + Math.random() * 0.2, 6, 6);
+            const rock = new THREE.Mesh(rockGeo, rockMat);
+            rock.position.set(
+                Math.cos(angle) * 3.2,
+                0.15,
+                Math.sin(angle) * 3.2
+            );
+            rock.scale.y = 0.5;
+            pondGroup.add(rock);
+        }
+        
+        pondGroup.position.set(-12, 0, 8);
+        scene.add(pondGroup);
 
         // Flowers
         const flowers = [];
@@ -617,6 +659,11 @@
                 cloud.position.x += cloud.userData.speed;
                 if (cloud.position.x > 50) cloud.position.x = -50;
             });
+
+            // Water ripple effect
+            if (water) {
+                water.position.y = water.userData.baseY + Math.sin(time * 2) * 0.02;
+            }
 
             controls.update();
             renderer.render(scene, camera);

@@ -3,7 +3,7 @@
 ## Backlog (Things to add)
 - [x] Clouds in the sky ✅ (2026-03-18 18:38)
 - [x] Sun with glow effect ✅ (2026-03-18 18:44)
-- [ ] Pond with water
+- [x] Pond with water ✅ (2026-03-18 18:50)
 - [ ] Bench in the garden
 - [ ] More flower varieties
 - [ ] Mailbox by the path
@@ -53,3 +53,4 @@
 - 18:38 - ☁️ Added fluffy clouds that drift across the sky!
 - 18:44 - ☀️ Added a glowing sun in the sky!
 - 18:49 - 📱 Fixed mobile layout - panels stack properly now!
+- 18:50 - 🌊 Added a pond with water and rocks!
