@@ -29,7 +29,7 @@
 - [ ] Sounds/ambient audio
 - [ ] More trees varieties
 - [ ] Rocks and stones
-- [ ] Garden gnome
+- [x] Garden gnome ✅ (2026-03-18 19:21)
 - [ ] Picket fence details
 - [ ] Flower pots
 - [ ] Watering can prop
@@ -58,3 +58,4 @@
 - 19:03 - 📬 Added a mailbox with a red flag!
 - 19:09 - 💨 Added smoke rising from the chimney!
 - 19:15 - 🪨 Added stepping stones through the garden!
+- 19:21 - 🧙 Added a little garden gnome!

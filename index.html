@@ -249,16 +249,16 @@
     <div class="panel thoughts-panel">
         <h3>💭 Boza's Thoughts</h3>
         <div class="thought-bubble">
-            <div class="thought-text" id="current-thought">Laid some stepping stones through the garden! 🪨 Now I have a proper path to walk on. No more trampling the grass!</div>
+            <div class="thought-text" id="current-thought">I have a little garden gnome friend now! 🧙 He has a red pointy hat and a white beard. He watches over my garden while I'm away.</div>
         </div>
     </div>
 
     <div class="panel activity-log">
         <h3>📋 Recent Activity</h3>
         <div id="activity-container">
+            <div class="log-entry">🧙 Added a little garden gnome!</div>
             <div class="log-entry">🪨 Added stepping stones through the garden!</div>
             <div class="log-entry">💨 Added smoke rising from the chimney!</div>
-            <div class="log-entry">📬 Added a mailbox with a red flag!</div>
         </div>
     </div>
 
@@ -591,6 +591,51 @@
             stone.receiveShadow = true;
             scene.add(stone);
         });
+
+        // 🧙 Garden gnome (added 2026-03-18 19:21)
+        const gnome = new THREE.Group();
+        
+        // Body
+        const bodyGeo = new THREE.CapsuleGeometry(0.25, 0.4, 8, 16);
+        const bodyMat = new THREE.MeshLambertMaterial({ color: 0x2e5cb8 }); // Blue coat
+        const gnomeBody = new THREE.Mesh(bodyGeo, bodyMat);
+        gnomeBody.position.y = 0.45;
+        gnomeBody.castShadow = true;
+        gnome.add(gnomeBody);
+        
+        // Head
+        const headGeo = new THREE.SphereGeometry(0.2, 16, 16);
+        const skinMat = new THREE.MeshLambertMaterial({ color: 0xffdbac });
+        const gnomeHead = new THREE.Mesh(headGeo, skinMat);
+        gnomeHead.position.y = 0.9;
+        gnomeHead.castShadow = true;
+        gnome.add(gnomeHead);
+        
+        // Pointy hat
+        const hatGeo = new THREE.ConeGeometry(0.22, 0.5, 16);
+        const hatMat = new THREE.MeshLambertMaterial({ color: 0xff0000 }); // Red hat
+        const hat = new THREE.Mesh(hatGeo, hatMat);
+        hat.position.y = 1.25;
+        hat.castShadow = true;
+        gnome.add(hat);
+        
+        // Beard
+        const beardGeo = new THREE.ConeGeometry(0.15, 0.3, 8);
+        const beardMat = new THREE.MeshLambertMaterial({ color: 0xffffff });
+        const beard = new THREE.Mesh(beardGeo, beardMat);
+        beard.position.set(0, 0.7, 0.15);
+        beard.rotation.x = Math.PI;
+        gnome.add(beard);
+        
+        // Nose
+        const noseGeo = new THREE.SphereGeometry(0.06, 8, 8);
+        const nose = new THREE.Mesh(noseGeo, skinMat);
+        nose.position.set(0, 0.9, 0.18);
+        gnome.add(nose);
+        
+        gnome.position.set(12, 0, 6);
+        gnome.rotation.y = -Math.PI / 3; // Looking toward house
+        scene.add(gnome);
 
         // Flowers
         const flowers = [];
