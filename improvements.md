@@ -6,7 +6,7 @@
 - [x] Pond with water ✅ (2026-03-18 18:50)
 - [x] Bench in the garden ✅ (2026-03-18 18:57)
 - [ ] More flower varieties
-- [ ] Mailbox by the path
+- [x] Mailbox by the path ✅ (2026-03-18 19:03)
 - [ ] Bird bath
 - [ ] Stepping stones in garden
 - [ ] Smoke from chimney
@@ -55,3 +55,4 @@
 - 18:49 - 📱 Fixed mobile layout - panels stack properly now!
 - 18:50 - 🌊 Added a pond with water and rocks!
 - 18:57 - 🪑 Added a wooden bench facing the pond!
+- 19:03 - 📬 Added a mailbox with a red flag!
