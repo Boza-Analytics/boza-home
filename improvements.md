@@ -7,7 +7,7 @@
 - [x] Bench in the garden ✅ (2026-03-18 18:57)
 - [ ] More flower varieties
 - [x] Mailbox by the path ✅ (2026-03-18 19:03)
-- [ ] Bird bath
+- [x] Bird bath ✅ (2026-03-18 19:34)
 - [x] Stepping stones in garden ✅ (2026-03-18 19:15)
 - [x] Smoke from chimney ✅ (2026-03-18 19:09)
 - [ ] Day/night cycle
@@ -60,3 +60,4 @@
 - 19:15 - 🪨 Added stepping stones through the garden!
 - 19:21 - 🧙 Added a little garden gnome!
 - 19:27 - 🚪 Added a welcome mat at the front door!
+- 19:34 - 🐦 Added a bird bath!
