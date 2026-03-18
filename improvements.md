@@ -2,7 +2,7 @@
 
 ## Backlog (Things to add)
 - [x] Clouds in the sky ✅ (2026-03-18 18:38)
-- [ ] Sun with glow effect
+- [x] Sun with glow effect ✅ (2026-03-18 18:44)
 - [ ] Pond with water
 - [ ] Bench in the garden
 - [ ] More flower varieties
@@ -51,3 +51,4 @@
 - 18:22 - Fixed loading issues, simplified code
 - 18:22 - Starting continuous improvement cycle!
 - 18:38 - ☁️ Added fluffy clouds that drift across the sky!
+- 18:44 - ☀️ Added a glowing sun in the sky!

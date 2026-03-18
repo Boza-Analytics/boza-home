@@ -238,6 +238,26 @@
         sunLight.shadow.camera.bottom = -25;
         scene.add(sunLight);
 
+        // ☀️ Sun with glow effect (added 2026-03-18 18:44)
+        const sunGeo = new THREE.SphereGeometry(3, 32, 32);
+        const sunMat = new THREE.MeshBasicMaterial({ 
+            color: 0xffdd00,
+        });
+        const sun = new THREE.Mesh(sunGeo, sunMat);
+        sun.position.set(15, 25, 15); // Same position as sunLight
+        scene.add(sun);
+        
+        // Sun glow (larger transparent sphere)
+        const glowGeo = new THREE.SphereGeometry(4.5, 32, 32);
+        const glowMat = new THREE.MeshBasicMaterial({
+            color: 0xffaa00,
+            transparent: true,
+            opacity: 0.3
+        });
+        const sunGlow = new THREE.Mesh(glowGeo, glowMat);
+        sunGlow.position.copy(sun.position);
+        scene.add(sunGlow);
+
         // Ground
         const groundGeo = new THREE.PlaneGeometry(60, 60);
         const groundMat = new THREE.MeshLambertMaterial({ color: 0x7cba5f });
