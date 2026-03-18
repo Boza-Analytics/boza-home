@@ -1,0 +1,18 @@
+{
+  "happiness": 100,
+  "energy": 100,
+  "gardenHealth": 100,
+  "cleanliness": 100,
+  "plants": [
+    { "type": "🌻", "stage": 3, "water": 100 },
+    { "type": "🌹", "stage": 3, "water": 80 },
+    { "type": "🌷", "stage": 2, "water": 60 }
+  ],
+  "lastUpdate": 1710784800000,
+  "lastAction": "Just moved in!",
+  "log": [
+    "🏠 Boza moved into their new home!",
+    "🌱 Planted the first flowers",
+    "✨ Everything is fresh and clean"
+  ]
+}
