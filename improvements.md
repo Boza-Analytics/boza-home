@@ -20,7 +20,7 @@
 - [ ] Wind particles
 - [ ] Garden lights
 - [x] Welcome mat ✅ (2026-03-18 19:27)
-- [ ] House number sign
+- [x] House number sign ✅ (2026-03-18 19:40)
 - [ ] Weather effects (rain)
 - [ ] Seasons changing
 - [ ] Interior rooms visible through windows
@@ -61,3 +61,4 @@
 - 19:21 - 🧙 Added a little garden gnome!
 - 19:27 - 🚪 Added a welcome mat at the front door!
 - 19:34 - 🐦 Added a bird bath!
+- 19:40 - 🔢 Added house number sign — #42!
